@@ -2,7 +2,6 @@ package com.example.aesencryption.Activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.widget.Button;
@@ -68,7 +67,7 @@ public class Encryption extends Activity {
             strSecretKey = encoderfun(secretKeyen);
             tvSecretKey.setText(strSecretKey);
 
-            /*IV, Başlatma Vektörü anlamına gelir, şifreleme sırasında SecretKey ile birlikte kullanılacak isteğe bağlı bir sayıdır. IV, şifreleme işleminin başlangıcına rastgelelik ekler, aynı zamanda sadece bir kez kullanılacağından bağımsızlık olarak da adlandırılır.
+            /*IV, Başlatma Vektörü anlamına gelir, şifreleme sırasında SecretKey ile birlikte kullanılacak isteğe bağlı bir sayıdır. IV, şifreleme işleminin başlangıcına rastgelelik ekler.
              * */
             random = new SecureRandom();
             random.nextBytes(IV);
