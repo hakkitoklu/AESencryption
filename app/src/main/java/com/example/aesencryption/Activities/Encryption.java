@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aesencryption.Functions.Encrypt;
+import com.example.aesencryption.Functions.Utils;
 import com.example.aesencryption.R;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -80,6 +81,8 @@ public class Encryption extends Activity {
 
                 String tvIV = encoderfun(IV);
                 tvAnahtar.setText(tvIV);
+
+                Utils.saveData(this, sonuc, strSecretKey, tvIV);
 
             } catch (Exception e) {
                 e.printStackTrace();

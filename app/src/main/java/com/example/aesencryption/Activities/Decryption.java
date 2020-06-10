@@ -10,7 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aesencryption.Functions.Decrypt;
+import com.example.aesencryption.Functions.Utils;
 import com.example.aesencryption.R;
+
+import java.util.List;
+
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import butterknife.BindView;
@@ -36,6 +40,13 @@ public class Decryption extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.decryption);
         ButterKnife.bind(this);
+
+        List<String> list = Utils.getData(this);
+        if (list.size() > 0) {
+            etEncText.setText(list.get(0));
+            etSecretKey.setText(list.get(1));
+            etAnahtar.setText(list.get(2));
+        }
 
     }
     @OnClick(R.id.decBtn)
